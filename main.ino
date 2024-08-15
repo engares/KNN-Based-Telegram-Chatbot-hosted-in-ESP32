@@ -10,11 +10,11 @@
 // *** WiFi & Telegram credentials ***
 
 // Replace with your network credentials
-const char* ssid = "MiFibra-6288";  // MiFibra-6288 MIWIFI_i5nb
-const char* password = "4JapxDpK";  // 4JapxDpK  ng9cLSac  
+const char* ssid = "**********************";  // 
+const char* password = "******************";  // 
 
 // Replace with your bot token
-const char* botToken = "7114607992:AAHqDwP8nVI2clG6CJiNIhwf0RhyzwNYABg";
+const char* botToken = "*******************************************";
 
 // Time between reponses
 const int botRequestDelay = 1000;
