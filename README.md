@@ -1,16 +1,26 @@
 # KNN-Based-Telegram-Chatbot-hosted-in-ESP32
 
-Welcome to the ESP32-based chatbot project! This chatbot runs on an ESP32-S3 N16 R8 microcontroller and utilizes a k-nearest neighbors (k-NN) model along with TF-IDF (Term Frequency-Inverse Document Frequency) to generate intelligent  responses. The bot is capable of learning from new data and interacting with users via Telegram.
+Welcome to this small NLP project! This chatbot runs on an ESP32-S3 N16 R8 microcontroller and utilizes a k-nearest neighbors (k-NN) model along with TF-IDF (Term Frequency-Inverse Document Frequency) to generate intelligent  responses. The bot is capable of learning from new data and interacting with users via Telegram.
 
 ## Features
-
-- **Text Processing:** The bot cleans and normalizes user input by tokenizing the text and applying stemming techniques to focus on word roots.
-- **Synonym Matching:** The bot recognizes synonyms, allowing it to understand different ways of asking the same question.
-- **TF-IDF & k-NN:** These algorithms are used to calculate the importance of words and find the most relevant response calculating the cosine similarity from the bot's knowledge base.
+- **Natural Interaction on Telegram:** A smooth chat experience with a bot that runs efficiently on low-resource devices.
+- **Synonym and Variance Tolerance:** The bot recognizes synonyms and variations, allowing it to understand different ways of asking the same question.
 - **Learning Capability:** Users can train the bot with new phrases and responses using simple commands.
-- **Open Source:** The code is open for exploration and contribution, available in this repository.
+- **Highly Customizable with Small Data:** You just have to upload your own training data in a .txt file, more info below.
 
-- Vu, N. Q., & Bezemer, C. (2021). Improving the Discoverability of Indie Games by Leveraging their Similarity to Top-Selling Games. Research Gate. https://doi.org/10.1145/3472538.3472548
+##  How it works
+- **Text Processing:** The bot cleans and normalizes user input by tokenizing the text and applying stemming techniques to focus on word roots.
+- **TF-IDF & k-NN:** These algorithms are used to calculate the importance of words and find the most relevant response calculating the *cosine similarity* from the bot's knowledge base.
+
+
+
+**Implementation of the Cosine Similarity**
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c76f036a-48a3-412c-ab8d-c5bc4d35f176" alt="Two-simplified-documents-are-represented-as-vectors-of-word-count-Their-cosine">
+</p>
+
+*Source of the image: Vu, N. Q., & Bezemer, C. (2021). Improving the Discoverability of Indie Games by Leveraging their Similarity to Top-Selling Games. Research Gate. [https://doi.org/10.1145/3472538.3472548](https://doi.org/10.1145/3472538.3472548)*
+
 
 ## Getting Started
 
@@ -22,13 +32,6 @@ To get started with this project, you'll need the following:
 - **ESP32 Board Support**: Install the ESP32 board support in Arduino IDE.
 - **ESP32FS Tool**: This project uses the [ESP32FS tool](https://github.com/me-no-dev/arduino-esp32fs-plugin) to upload data to the ESP32's SPIFFS (SPI Flash File System). Make sure to install this plugin in your Arduino IDE.
 
-### Installing the ESP32FS Tool
-
-1. Download the ESP32FS tool from the [GitHub repository](https://github.com/me-no-dev/arduino-esp32fs-plugin).
-2. Navigate to your Arduino IDE installation directory.
-3. Place the `ESP32FS` tool in the `tools` directory under `Arduino IDE`.
-4. Restart the Arduino IDE. You should now see an option for "ESP32 Sketch Data Upload" under the Tools menu when an ESP32 board is selected.
-
 ### Setting Up the Project
 
 1. **Clone the Repository:**
@@ -39,25 +42,36 @@ To get started with this project, you'll need the following:
     ```
 
 2. **Open the Project in Arduino IDE:**
-    - Open `knn_chat_bot_v11.ino` in the Arduino IDE.
+    - Open `main.ino` in the Arduino IDE.
 
 3. **Upload Data to SPIFFS:**
-    - Prepare the `data` folder with your training data file (`trainingData.txt`) inside it.
+    - If you want to personalize the chatbort responses, prepare the `data` folder with your training data file (`trainingData.txt`) inside it. If not, just leave it like that. 
+    - Make sure it's formated like this:
+      ```bash
+      # [User message] -> [Bot's response]
+    
+      # Examples
+      Hey! -> Hello! How can I help you today?
+      Where is the store located? -> You can find us in 123 Fake Street.
+      ...  -> ...
+       ```
+    - *Note that the extension of the data the ESP32 can handle varies from the memory available on the ESP32 model, the original data contains 17753 characters*
     - Use the "ESP32 Sketch Data Upload" tool to upload this data to the ESP32.
 
-4. **Configure WiFi and Telegram:**
-    - Update the `ssid` and `password` variables with your WiFi credentials.
+5. **Configure WiFi and Telegram in `main.ino`:**
+    - Update the `ssid` and `password` variables with your WiFi credentials 
     - Add your Telegram bot token in the `botToken` variable.
 
-5. **Upload the Code:**
+6. **Upload the Code:**
     - Connect your ESP32 to your computer.
-    - Select the correct board and port in Arduino IDE.
+    - Select the correct board and port in Arduino IDE. *(Additional configuration may be required, please check a simple guide [here](https://lastminuteengineers.com/esp32-arduino-ide-tutorial/))*
     - Upload the code to your ESP32.
 
 ### Using the Bot
 
 - **Start the Bot:** After uploading, the bot will connect to WiFi and be ready to receive messages via Telegram.
-- **Commands:**
+- **Just Chat!** 
+- **Aditional Commands:**
   - `/start`: See the welcome message.
   - `/help`: Get a list of commands and help information.
   - `/about`: Learn more about how the bot works.
@@ -65,26 +79,11 @@ To get started with this project, you'll need the following:
 
 ### Project Structure
 
-- **`knn_chat_bot_v11.ino`**: The main Arduino sketch that initializes the bot and handles communication with Telegram.
+- **`main.ino`**: The main Arduino sketch that initializes the bot and handles communication with Telegram.
 - **`knn.h` and `knn.cpp`**: These files contain the k-nearest neighbors logic, TF-IDF calculations, and text processing functions.
 - **`data/`**: Contains the training data file (`trainingData.txt`) that is uploaded to SPIFFS.
-
-### How the Bot Works
-
-- **Text Processing:** The bot normalizes and tokenizes user input, reducing words to their stems to understand the core meaning.
-- **TF-IDF Calculation:** TF-IDF values are computed to weigh the importance of words in the context of the entire knowledge base.
-- **k-NN Matching:** The bot uses k-nearest neighbors to find the most similar previous interaction based on TF-IDF scores.
-- **Learning New Data:** Users can teach the bot new interactions using the `/train` command, which updates the bot’s knowledge base dynamically.
-
+- **`.ign/`**: Images and stuff for this README.
+  
 ### Contributing
+Feel free to open issues or submit pull requests with improvements, bug fixes, or new features :) 
 
-Contributions are welcome! Feel free to open issues or submit pull requests with improvements, bug fixes, or new features.
-
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### Acknowledgments
-
-- Special thanks to [me-no-dev](https://github.com/me-no-dev) for the ESP32FS tool.
-- Thanks to the Arduino and ESP32 communities for their support and resources.
