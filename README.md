@@ -1,6 +1,7 @@
 # KNN-Based-Telegram-Chatbot-hosted-in-ESP32
 
-| Welcome to this small NLP project! This is Charlie, a little chatbot that can be hosted in a microcontroller and utilizes a k-nearest neighbors (k-NN) model along with TF-IDF (Term Frequency-Inverse Document Frequency) to generate intelligent responses. The bot is capable of learning from new data and interacting with users via Telegram. | ![Logo](https://github.com/user-attachments/assets/14cd1647-8e75-4963-bdc9-239a65828505) |
+| Welcome to this small NLP project! This is Charlie, a little chatbot that can be hosted in a microcontroller and utilizes a k-nearest neighbors (k-NN) model along with TF-IDF (Term Frequency-Inverse Document Frequency) to generate intelligent responses. The bot is capable of learning from new data and interacting with users via Telegram. 
+Welcome to this small NLP project! This is Charlie, a little chatbot that can be hosted in a microcontroller and utilizes a k-nearest neighbors (k-NN) model along with TF-IDF (Term Frequency-Inverse Document Frequency) to generate intelligent responses. The bot is capable of learning from new data and interacting with users via Telegram. | ![Logo](https://github.com/user-attachments/assets/14cd1647-8e75-4963-bdc9-239a65828505) |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
 
 <div align="center">
@@ -14,7 +15,8 @@
 - **Highly Customizable with Small Data:** You just have to upload your own training data in a .txt file, more info below.
 
 ## How It Works
-The bot uses a combination of text processing and machine learning algorithms to generate intelligent responses in real-time. Here’s a breakdown of the core components:
+
+The bot uses a combination of text processing and machine learning algorithms to generate intelligent responses in real-time. All data is stored in the ESP32's flash memory, making it a self-contained solution. Here’s a summmarised explanation:
 
 - **Text Processing:** The bot first cleans and normalizes user input by breaking down the text into tokens (words) and applying stemming techniques to focus on the root form of each word. The data is also augmented with a dictionary of common synonyms. This ensures that different forms of a word or similar words (e.g., "running" vs. "run", "movies" vs "films") are treated as the same concept.
 
