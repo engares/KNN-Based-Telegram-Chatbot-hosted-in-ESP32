@@ -33,6 +33,8 @@ To determine the most relevant response, the bot calculates the cosine similarit
 
 *Source of the image: Vu, N. Q., & Bezemer, C. (2021). Improving the Discoverability of Indie Games by Leveraging their Similarity to Top-Selling Games. Research Gate. [https://doi.org/10.1145/3472538.3472548](https://doi.org/10.1145/3472538.3472548)*
 
+*Note: The training data used by this bot is synthetic and was generated using a LLM. This allows for a controlled and scalable dataset but may not perfectly replicate all real-world scenarios.*
+
 
 ## Getting Started
 
