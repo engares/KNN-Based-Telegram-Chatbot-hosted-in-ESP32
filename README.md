@@ -8,13 +8,20 @@ Welcome to this small NLP project! This chatbot runs on an ESP32-S3 N16 R8 micro
 - **Learning Capability:** Users can train the bot with new phrases and responses using simple commands.
 - **Highly Customizable with Small Data:** You just have to upload your own training data in a .txt file, more info below.
 
-##  How it works
-- **Text Processing:** The bot cleans and normalizes user input by tokenizing the text and applying stemming techniques to focus on word roots.
-- **TF-IDF & k-NN:** These algorithms are used to calculate the importance of words and find the most relevant response calculating the *cosine similarity* from the bot's knowledge base.
+## How It Works
+The bot uses a combination of text processing and machine learning algorithms to generate intelligent responses in real-time. Here’s a breakdown of the core components:
 
+- **Text Processing:** The bot first cleans and normalizes user input by breaking down the text into tokens (words) and applying stemming techniques to focus on the root form of each word. The data is also augmented with a dictionary of common synonyms. This ensures that different forms of a word or similar words (e.g., "running" vs. "run", "movies" vs "films") are treated as the same concept.
 
+- **TF-IDF & k-NN Algorithms:** 
+  - **TF-IDF (Term Frequency-Inverse Document Frequency):** This algorithm calculates the importance of each word in the user's input relative to the entire knowledge base. Words that are more unique to the input are given higher weights.
+  - **k-NN (k-Nearest Neighbors):** The bot then uses the k-NN algorithm to compare the processed input against all stored interactions, calculating the *cosine similarity* between vectors representing these interactions. The bot selects the response corresponding to the most similar previous interaction.
 
-**Implementation of the Cosine Similarity**
+### Implementation of Cosine Similarity
+
+To determine the most relevant response, the bot calculates the cosine similarity between the input vector and each interaction vector in its knowledge base. Cosine similarity measures the angle between two vectors, providing a numerical value that represents their similarity.
+
+**Simple example of Cosine Similarity**
 <p align="center">
   <img src="https://github.com/user-attachments/assets/c76f036a-48a3-412c-ab8d-c5bc4d35f176" alt="Two-simplified-documents-are-represented-as-vectors-of-word-count-Their-cosine">
 </p>
@@ -28,8 +35,10 @@ Welcome to this small NLP project! This chatbot runs on an ESP32-S3 N16 R8 micro
 
 To get started with this project, you'll need the following:
 
-- **Arduino IDE 1.8.X**: The project requires Arduino IDE version 1.8.X.
-- **ESP32 Board Support**: Install the ESP32 board support in Arduino IDE.
+- **An ESP32 Board**: For this project I used an ESP32-SR-VROOM N16R8 board.
+  It should be compatible with other ESP32 boards. I got mine for [~4$ on Aliexpress](https://es.aliexpress.com/item/1005006716318106.html?srcSns=sns_Copy&sourceType=570&spreadType=socialShare&bizType=ProductDetail&social_params=60746885794&aff_fcid=410ea7705d764e55ab1ae1ab0cc71776-1723747881531-02552-_EvqHskt&tt=MG&aff_fsk=_EvqHskt&aff_platform=default&sk=_EvqHskt&aff_trace_key=410ea7705d764e55ab1ae1ab0cc71776-1723747881531-02552-_EvqHskt&shareId=60746885794&businessType=ProductDetail&platform=AE&terminal_id=12ba69b1bfa641daad13ae1e7a9b015b&afSmartRedirect=y&gatewayAdapt=glo2esp)
+- **Arduino IDE 1.8.X**: The project requires ***Arduino IDE version 1.8.X.*** Greater versions are NOT compatible with ES32FS Tool.
+- **ESP32 Board Support**: [Install the ESP32 board support in Arduino IDE.](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html) 
 - **ESP32FS Tool**: This project uses the [ESP32FS tool](https://github.com/me-no-dev/arduino-esp32fs-plugin) to upload data to the ESP32's SPIFFS (SPI Flash File System). Make sure to install this plugin in your Arduino IDE.
 
 ### Setting Up the Project
