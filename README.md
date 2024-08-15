@@ -1,6 +1,12 @@
-# KNN-Based-Telegram-Chatbot-hosted-in-ESP32
-
-Welcome to this small NLP project! This is Charlie, a litle Chatbot that can be hosted in a microcontroller and utilizes a k-nearest neighbors (k-NN) model along with TF-IDF (Term Frequency-Inverse Document Frequency) to generate intelligent responses. The bot is capable of learning from new data and interacting with users via Telegram.
+<div style="display: flex; align-items: center;">
+  <div style="flex: 1; padding-right: 20px;">
+    <h1>KNN-Based-Telegram-Chatbot-hosted-in-ESP32</h1>
+    <p>Welcome to this small NLP project! This is Charlie, a little chatbot that can be hosted in a microcontroller and utilizes a k-nearest neighbors (k-NN) model along with TF-IDF (Term Frequency-Inverse Document Frequency) to generate intelligent responses. The bot is capable of learning from new data and interacting with users via Telegram.</p>
+  </div>
+  <div style="flex-shrink: 0;">
+    <img src="https://github.com/user-attachments/assets/f8c54e4b-4914-48d8-b8a7-47fa39a303ae" alt="Logo" width="200"/>
+  </div>
+</div>
 
 ## Features
 - **Natural Interaction on Telegram:** A smooth chat experience with a bot that runs efficiently on low-resource devices.
@@ -46,7 +52,7 @@ To get started with this project, you'll need the following:
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your-username/esp32-chatbot.git
+    git clone https://github.com/engares/KNN-Based-Telegram-Chatbot-hosted-in-ESP32.git
     cd esp32-chatbot
     ```
 
@@ -60,7 +66,7 @@ To get started with this project, you'll need the following:
       # [User message] -> [Bot's response]
     
       # Examples
-      Hey! -> Hello! How can I help you today?
+      Hey! -> Hello! How can I help you today? 
       Where is the store located? -> You can find us in 123 Fake Street.
       ...  -> ...
        ```
