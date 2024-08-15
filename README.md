@@ -1,6 +1,6 @@
 # KNN-Based-Telegram-Chatbot-hosted-in-ESP32
 
-Welcome to this small NLP project! This chatbot runs on an ESP32-S3 N16 R8 microcontroller and utilizes a k-nearest neighbors (k-NN) model along with TF-IDF (Term Frequency-Inverse Document Frequency) to generate intelligent  responses. The bot is capable of learning from new data and interacting with users via Telegram.
+Welcome to this small NLP project! This is Charlie, a litle Chatbot that can be hosted in a microcontroller and utilizes a k-nearest neighbors (k-NN) model along with TF-IDF (Term Frequency-Inverse Document Frequency) to generate intelligent responses. The bot is capable of learning from new data and interacting with users via Telegram.
 
 ## Features
 - **Natural Interaction on Telegram:** A smooth chat experience with a bot that runs efficiently on low-resource devices.
