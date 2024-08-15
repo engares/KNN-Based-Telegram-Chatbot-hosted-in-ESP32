@@ -63,7 +63,7 @@ To get started with this project, you'll need the following:
     - Open `main.ino` in the Arduino IDE.
 
 3. **Upload Data to SPIFFS:**
-    - If you want to personalize the chatbort responses, prepare the `data` folder with your training data file (`trainingData.txt`) inside it. If not, just leave it like that. 
+    - If you want to personalize the chatbot responses, prepare the `data` folder with your training data file (`trainingData.txt`) inside it. If not, just leave it like that. 
     - Make sure it's formated like this:
       ```bash
       # [User message] -> [Bot's response]
