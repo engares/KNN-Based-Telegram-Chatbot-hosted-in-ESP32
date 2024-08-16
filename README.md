@@ -39,12 +39,14 @@ To determine the most relevant response, the bot calculates the cosine similarit
 
 ## Getting Started
 
-### Prerequisites
-
 <p align="center">
   <img src="https://m.media-amazon.com/images/I/71ZT8X8nEPL._AC_UF894,1000_QL80_.jpg" width= 400>
+  <br>
+  ESP32-S3-VROOM N16R8
 </p>
 
+
+### Prerequisites
 
 To get started with this project, you'll need the following:
 
