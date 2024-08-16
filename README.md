@@ -41,6 +41,11 @@ To determine the most relevant response, the bot calculates the cosine similarit
 
 ### Prerequisites
 
+<p align="center">
+  <img src="https://m.media-amazon.com/images/I/71ZT8X8nEPL._AC_UF894,1000_QL80_.jpg" width= 400>
+</p>
+
+
 To get started with this project, you'll need the following:
 
 - **An ESP32 Board**: For this project I used an ESP32-SR-VROOM N16R8 board.
