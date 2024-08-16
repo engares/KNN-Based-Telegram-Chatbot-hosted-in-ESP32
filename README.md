@@ -61,8 +61,18 @@ To get started with this project, you'll need the following:
 2. **Open the Project in Arduino IDE:**
     - Open `main.ino` in the Arduino IDE.
 
-3. **Upload Data to SPIFFS:**
-    - If you want to personalize the chatbot responses, prepare the `data` folder with your training data file (`trainingData.txt`) inside it. If not, just leave it like that. 
+
+3. **Configure WiFi and Telegram in `main.ino`:**
+    - Update the `ssid` and `password` variables with your WiFi credentials 
+    - Add your Telegram bot token in the `botToken` variable.
+
+4. **Upload the Code:**
+    - Connect your ESP32 to your computer.
+    - Select the correct board and port in Arduino IDE. *(Additional configuration may be required, please check a simple guide [here](https://lastminuteengineers.com/esp32-arduino-ide-tutorial/))*
+    - Upload the code to your ESP32.
+  
+5. **Upload Data to SPIFFS:**
+    - You can personalize the chatbot responses, preparing the `data` folder adding your training data file (`trainingData.txt`) inside it. If not, you can use the original file. 
     - Make sure it's formated like this:
       ```bash
       # [User message] -> [Bot's response]
@@ -73,16 +83,8 @@ To get started with this project, you'll need the following:
       ...  -> ...
        ```
     - *Note that the extension of the data the ESP32 can handle varies from the memory available on the ESP32 model, the original data contains 17753 characters*
+      
     - Use the "ESP32 Sketch Data Upload" tool to upload this data to the ESP32.
-
-5. **Configure WiFi and Telegram in `main.ino`:**
-    - Update the `ssid` and `password` variables with your WiFi credentials 
-    - Add your Telegram bot token in the `botToken` variable.
-
-6. **Upload the Code:**
-    - Connect your ESP32 to your computer.
-    - Select the correct board and port in Arduino IDE. *(Additional configuration may be required, please check a simple guide [here](https://lastminuteengineers.com/esp32-arduino-ide-tutorial/))*
-    - Upload the code to your ESP32.
 
 ### Using the Bot
 
